@@ -4,10 +4,28 @@
         <img src="{{ pokemon.imagem.url }}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{ pokemon.nome }}</h5>
-            <p class="card-text">{{ pokemon.fk_categoria.nome }}</p>
+            <h5 class="card-title">{{ pokemon.fk_habilidades.descricao }}</h5>
+            <p class="card-text"> Categoria: {{ pokemon.fk_categoria.nome }}</p>
+            <p class="card-text"> Saúde: {{ pokemon.ponto_saude }}</p>
+            <p class="card-text"> Ataque: {{ pokemon.ataque }}</p>
+            <p class="card-text"> Altura: {{ pokemon.altura }}</p>
+            <p class="card-text"> Defesa: {{ pokemon.defesa }}</p>
+            <p class="card-text"> Ataque especial: {{ pokemon.ataque_especial }}</p>
+            <p class="card-text"> Defesa especial: {{ pokemon.defesa_especial }}</p>
+            <p class="card-text"> Velocidade: {{ pokemon.velocidade }}</p>
+
+            <!-- ponto_saude = models.PositiveIntegerField()
+    ataque = models.PositiveIntegerField()
+    defesa = models.PositiveIntegerField()
+    ataque_especial = models.PositiveIntegerField()
+    defesa_especial = models.PositiveIntegerField()
+    velocidade = models.PositiveIntegerField()
+
+-->
+
         </div>
     </div>
-    <a href="{% url 'pokedex:listar_pokemons' %}">
+    <a href="{% url 'APLICACAO:listar_pokemons' %}">
         <button>Voltar</button>
     </a>
 {% endblock %}

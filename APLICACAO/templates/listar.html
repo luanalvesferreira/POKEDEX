@@ -13,12 +13,12 @@
         <tbody>
         {% for objeto in todos_pokemons %}
             <tr scope="row">
-                <td><a href="{% url 'pokedex:um_pokemon' idpokemon=objeto.id %}">
+                <td><a href="{% url 'APLICACAO:um_pokemon' idpokemon=objeto.id %}">
                     {{ objeto.id }}</a></td>
                 <td>{{ objeto.nome }}</td>
                 <td>{{ objeto.altura }}</td>
                 <td>{{ objeto.velocidade }}</td>
-                <td>{{ objeto.fk_categoria.nome }}{{ objeto.ataque }}</td>
+                <td>{{ objeto.fk_categoria.nome }}</td>
             </tr>
         {% endfor %}
         </tbody>
