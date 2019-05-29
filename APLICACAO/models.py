@@ -26,6 +26,7 @@ class Pokemon(models.Model):
     imagem = models.FileField(upload_to='fotos/')
     nome = models.CharField(max_length=120)
     altura = models.FloatField()
+    peso = models.FloatField()
     fk_categoria = models.ForeignKey('Categoria', on_delete=models.PROTECT)
     fk_habilidades = models.ManyToManyField(Habilidade)
     ponto_saude = models.PositiveIntegerField()

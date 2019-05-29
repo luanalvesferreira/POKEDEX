@@ -4,28 +4,86 @@
         <img src="{{ pokemon.imagem.url }}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{ pokemon.nome }}</h5>
-            <h5 class="card-title">{{ pokemon.fk_habilidades.descricao }}</h5>
+
+            <p class="card-title"> Habilidade: {% for pokemon in pokemon.fk_habilidades.all %}
+            {{ pokemon.nome }} {% endfor %}
+
             <p class="card-text"> Categoria: {{ pokemon.fk_categoria.nome }}</p>
             <p class="card-text"> Saúde: {{ pokemon.ponto_saude }}</p>
             <p class="card-text"> Ataque: {{ pokemon.ataque }}</p>
             <p class="card-text"> Altura: {{ pokemon.altura }}</p>
+            <p class="card-text"> Peso: {{ pokemon.peso }}</p>
             <p class="card-text"> Defesa: {{ pokemon.defesa }}</p>
             <p class="card-text"> Ataque especial: {{ pokemon.ataque_especial }}</p>
             <p class="card-text"> Defesa especial: {{ pokemon.defesa_especial }}</p>
             <p class="card-text"> Velocidade: {{ pokemon.velocidade }}</p>
 
             <!-- ponto_saude = models.PositiveIntegerField()
-    ataque = models.PositiveIntegerField()
-    defesa = models.PositiveIntegerField()
-    ataque_especial = models.PositiveIntegerField()
-    defesa_especial = models.PositiveIntegerField()
-    velocidade = models.PositiveIntegerField()
-
--->
-
+            ataque = models.PositiveIntegerField()
+            defesa = models.PositiveIntegerField()
+            ataque_especial = models.PositiveIntegerField()
+            defesa_especial = models.PositiveIntegerField()
+            velocidade = models.PositiveIntegerField()
+            -->
         </div>
     </div>
+
+<br>
+
+<br>
+<div>
+<div class="progress" style="height: 10px;">
+  <div class="progress-bar" role="progressbar" style="width: {{ pokemon.ponto_saude }}*100/1600px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="1600">
+      {{ pokemon.ponto_saude }}
+  </div>
+</div>
+    <br>
+<div class="progress" style="height: 10px;">
+  <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+      {{ pokemon.altura }}
+  </div>
+</div>
+    </div>
+
+
+
+<!--
+    <div class="progress" style="width: {{ pokemon.ponto_saude }}px ">
+  <div> </div>
+        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10"  aria-valuemin="0" aria-valuemax="1600">
+            Saúde: {{ pokemon.ponto_saude }}
+  </div>
+</div><br>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+      Ataque: {{ pokemon.ataque }}
+  </div>
+</div><br>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    Altura: {{ pokemon.altura }}
+  </div>
+</div><br>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+    Peso: {{ pokemon.peso }}
+  </div>
+</div><br>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+    Defesa: {{ pokemon.defesa }}
+  </div>
+</div><br>
+<br>
+-->
     <a href="{% url 'APLICACAO:listar_pokemons' %}">
-        <button>Voltar</button>
+        <button type="button" class="btn btn-dark">Voltar</button>
     </a>
+<br>
+<br>
+
 {% endblock %}
