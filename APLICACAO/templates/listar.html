@@ -1,7 +1,20 @@
 {% extends "base.html" %}
 {% block conteudo %}
     <table class="table table-hover">
-        <thead>
+
+            <table class="table table-hover table-dark">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NOME</th>
+          <th scope="col">ALTURA</th>
+          <th scope="col">VELOCIDADE</th>
+            <th scope="col">CATEGORIA</th>
+
+        </tr>
+      </thead>
+        <h2 align="center">Pokedex</h2>
+        <!--<thead>
         <tr>
             <th>ID</th>
             <th>Nome</th>
@@ -10,8 +23,22 @@
             <th>Categoria</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody>-->
         {% for objeto in todos_pokemons %}
+
+                <tbody>
+            <tr>
+
+              <td><a href="{% url 'APLICACAO:um_pokemon' idpokemon=objeto.id %}">
+                   <img  width="40" src="{{ objeto.imagem.url }}"></a></td>
+              <td>{{ objeto.nome }}</td>
+              <td>{{ objeto.altura }}</td>
+                <td>{{ objeto.velocidade }}</td>
+                <td>{{ objeto.fk_categoria.nome }}</td>
+
+
+            </tr>
+                <!--
             <tr scope="row">
                 <td><a href="{% url 'APLICACAO:um_pokemon' idpokemon=objeto.id %}">
                     {{ objeto.id }}</a></td>
@@ -19,7 +46,7 @@
                 <td>{{ objeto.altura }}</td>
                 <td>{{ objeto.velocidade }}</td>
                 <td>{{ objeto.fk_categoria.nome }}</td>
-            </tr>
+            </tr>-->
         {% endfor %}
         </tbody>
     </table>

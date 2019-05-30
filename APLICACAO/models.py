@@ -35,6 +35,7 @@ class Pokemon(models.Model):
     ataque_especial = models.PositiveIntegerField()
     defesa_especial = models.PositiveIntegerField()
     velocidade = models.PositiveIntegerField()
+    exp_base = models.PositiveIntegerField()
 
     def __str__(self):
         return self.nome

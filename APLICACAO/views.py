@@ -17,6 +17,7 @@ def listarPokemons(request):
     return render(request, 'listar.html', contexto)
 
 
+
 def umPokemon(request, idpokemon=None):
     pokemon = Pokemon.objects.get(id=idpokemon)
     contexto = {
