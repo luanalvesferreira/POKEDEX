@@ -3,6 +3,52 @@
 
 
 
+
+
+<div class="card text-white bg-dark text-center mx-auto" style="width: 35rem;">
+    </br>
+    <img src="{{ pokemon.imagem.url }}" class="card-img-top text-center mx-auto" alt="..." style="width:350px">
+
+
+    <div class="card-body">
+        <h5 class="card-title" id="poke">{{ pokemon.nome }}</h5>
+        <div class="container">
+            <div class="row style= width: 20px">
+                <div class="col-sm">
+                    <b class="card-title" id="habilidade1"> Habilidade: </b></br><b id="habilidade">{% for pokemon in pokemon.fk_habilidades.all %}
+                        {{ pokemon.nome }} {% endfor %}</b></br>
+                    <b class="card-text"  id="categoria1"> Categoria: </b></br><b id="categoria">{{ pokemon.fk_categoria.nome }}</b></br>
+                </div>
+                <div class="col-sm">
+                    <b class="card-text" align="left" id="saude1"> Saúde: </b></br><b id="saude">{{ pokemon.ponto_saude }}</b></br>
+                    <b class="card-text" align="left" id="ataque1"> Ataque: </b></br><b id="ataque">{{ pokemon.ataque }}</b></br>
+                    <b class="card-text" align="left" id="altura1"> Altura: </b></br><b id="altura">{{ pokemon.altura }}</b></br>
+                    <b class="card-text" align="left" id="peso1"> Peso: </b></br><b id="peso">{{ pokemon.peso }}</b></br>
+                    <b class="card-text" align="left" id="defesa1"> Defesa: </b></br><b id="defesa">{{ pokemon.defesa }}</b></br>
+                    <b class="card-text" align="left" id="ataquee1"> Ataque especial: </b></br><b id="ataquee">{{ pokemon.ataque_especial }}</b></br>
+                    <b class="card-text" align="left" id="defesae1"> Defesa especial: </b></br><b id="defesae">{{ pokemon.defesa_especial }}</b></br>
+
+
+
+                </div>
+                <div class="col-sm">
+                    <b class="card-text" align="left" id="velo1"> Velocidade: </b></br><b id="velo">{{ pokemon.velocidade }}</b></br>
+                    <b class="card-text" align="left" id="exp1"> Experiência: </b></br><b id="exp">{{ pokemon.exp_base }}</b></br>
+
+                </div>
+            </div>
+        </div>
+
+  </br>
+
+
+
+    <a href="{% url 'APLICACAO:listar_pokemons' %}">
+    <button type="button" class="btn btn-secondary ">Voltar</button>
+</a>
+    </div>
+</div>
+
 <!--
 <div class="card text-white bg-dark text-center mx-auto" style="width: 30rem; size: 30rem;">
     <img src="{{ pokemon.imagem.url }}" class="card-img-top text-center mx-auto" alt="..."  style="width:350px">
@@ -32,12 +78,14 @@
         defesa_especial = models.PositiveIntegerField()
         velocidade = models.PositiveIntegerField()
         -->
-        <a href="{% url 'APLICACAO:listar_pokemons' %}">
+
+
+        <!-- <a href="{% url 'APLICACAO:listar_pokemons' %}">
     <button type="button" class="btn btn-secondary ">Voltar</button>
 </a>
     </div>
 </div>
-
+-->
 <br>
 
 <br>
